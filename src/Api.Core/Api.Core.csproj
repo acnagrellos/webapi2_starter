@@ -56,6 +56,8 @@
     <Compile Include="Controllers\Base\BaseController.cs" />
     <Compile Include="Controllers\Base\NotFoundController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Features\Versioned\VersionConstraint.cs" />
+    <Compile Include="Features\Versioned\VersionedRouteAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
