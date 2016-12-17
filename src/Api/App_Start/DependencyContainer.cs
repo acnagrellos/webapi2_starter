@@ -20,6 +20,8 @@ namespace Api.App_Start
             builder.RegisterApiControllers(typeof(BaseController).GetTypeInfo().Assembly);
             builder.RegisterWebApiFilterProvider(configuration);
 
+            // Register all services.
+
             var container = builder.Build();
             return container;
         }

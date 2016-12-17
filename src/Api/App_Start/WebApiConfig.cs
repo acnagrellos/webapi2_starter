@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using Api.App_Start;
+using Autofac.Integration.WebApi;
+using System.Web.Http;
 
 namespace Api
 {
@@ -6,6 +8,8 @@ namespace Api
     {
         public static void Register(HttpConfiguration config)
         {
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(DependencyContainer.BuildContainer(config));
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
