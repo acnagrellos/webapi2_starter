@@ -1,4 +1,5 @@
-﻿using Api.Core.Controllers.Base;
+﻿using Api.Controllers;
+using Api.Core.Controllers.Base;
 using Autofac;
 using Autofac.Integration.WebApi;
 using System.Net;
@@ -17,6 +18,7 @@ namespace Api.App_Start
 
             var builder = new ContainerBuilder();
 
+            builder.RegisterApiControllers(typeof(NotFoundController).GetTypeInfo().Assembly);
             builder.RegisterApiControllers(typeof(BaseController).GetTypeInfo().Assembly);
             builder.RegisterWebApiFilterProvider(configuration);
 

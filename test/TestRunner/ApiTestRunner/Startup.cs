@@ -1,11 +1,11 @@
-﻿using Api;
+﻿using ApiTestRunner;
 using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Owin;
 using System.Web.Http;
 
 [assembly: OwinStartup(typeof(Startup))]
-namespace Api
+namespace ApiTestRunner
 {
     public class Startup
     {

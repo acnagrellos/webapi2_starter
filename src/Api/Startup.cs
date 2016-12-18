@@ -16,7 +16,9 @@ namespace Api
             WebApiConfig.Register(config);
             app.UseCors(CorsOptions.AllowAll);
             app.UseWebApi(config);
+#if DEBUG
             SwaggerConfig.Configure(config);
+#endif
         }
     }
 }

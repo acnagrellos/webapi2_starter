@@ -1,4 +1,4 @@
-﻿namespace Api.Core
+﻿namespace ApiTestRunner.Core
 {
     public static class Constants
     {
@@ -8,7 +8,7 @@
         public const string VersionHeader = "api-header";
         public const int VersionDefault = 1;
 
-        public const string Test = "test";
+        public const string Version = "version";
         public const string GetTestBoolean = "get-test-boolean";
     }
 }
