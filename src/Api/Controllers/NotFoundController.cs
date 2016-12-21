@@ -1,8 +1,8 @@
 ﻿using System.Web.Http;
 
-namespace Api.Core.Controllers.Base
+namespace Api.Controllers
 {
-    public class NotFoundController : BaseController
+    public class NotFoundController : ApiController
     {
         [HttpGet, HttpPost, HttpPut, HttpDelete, HttpHead, HttpOptions, AcceptVerbs("PATCH")]
         public IHttpActionResult ErrorNotFound()

@@ -1,11 +1,11 @@
-﻿using Api.Core.Controllers.Base;
+﻿using ApiTestRunner.Core.Controllers.Base;
 using Autofac;
 using Autofac.Integration.WebApi;
 using System.Net;
 using System.Reflection;
 using System.Web.Http;
 
-namespace Api.App_Start
+namespace ApiTestRunner
 {
     public class DependencyContainer
     {

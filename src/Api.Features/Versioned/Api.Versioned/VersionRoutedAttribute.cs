@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http.Routing;
 
-namespace Api.Core.Features.Versioned
+namespace Api.Versioned
 {
-    internal class VersionedRoute : RouteFactoryAttribute
+    public class VersionedRoute : RouteFactoryAttribute
     {
         #region Fields
         private readonly int allowedVersion;

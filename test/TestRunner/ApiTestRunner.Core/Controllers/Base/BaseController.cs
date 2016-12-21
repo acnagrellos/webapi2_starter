@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace Api.Core.Controllers.Base
+namespace ApiTestRunner.Core.Controllers.Base
 {
     public class BaseController : ApiController
     {

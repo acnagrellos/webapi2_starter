@@ -3,7 +3,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web.Http.Routing;
 
-namespace Api.Core.Features.Versioned
+namespace Api.Versioned
 {
     internal class VersionConstraint : IHttpRouteConstraint
     {
@@ -23,7 +23,7 @@ namespace Api.Core.Features.Versioned
             IDictionary<string, object> values, HttpRouteDirection routeDirection)
         {
             if (routeDirection != HttpRouteDirection.UriResolution) return false;
-            var version = GetVersionHeader(request) ?? Constants.VersionDefault;
+            var version = GetVersionHeader(request) ?? VersionConstants.GetSettingOrDefaultValue<int>(VersionConstants.ConfVersionDefault);
             return version == allowedVersion;
         }
         #endregion
@@ -33,7 +33,8 @@ namespace Api.Core.Features.Versioned
         {
             string versionAsString;
             IEnumerable<string> headerValues;
-            if (request.Headers.TryGetValues(Constants.VersionHeader, out headerValues) && headerValues.Count() == 1)
+            if (request.Headers.TryGetValues(VersionConstants.GetSettingOrDefaultValue<string>(VersionConstants.ConfVersionHeader), out headerValues) && 
+                headerValues.Count() == 1)
             {
                 versionAsString = headerValues.First();
             }
